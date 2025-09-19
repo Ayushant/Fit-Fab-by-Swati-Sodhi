@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fit & Fab by Swati Sodhi - Project Proposal</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 15mm;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            background: white;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+        
+        .company-info {
+            font-size: 14px;
+            margin-top: 15px;
+            opacity: 0.9;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+            page-break-inside: avoid;
+        }
+        
+        .section-title {
+            background: #f8f9fa;
+            padding: 12px 20px;
+            border-left: 4px solid #667eea;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .budget-cards {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .budget-card {
+            flex: 1;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .budget-card.premium {
+            border-color: #28a745;
+            background: linear-gradient(135deg, #f8fff9 0%, #e8f5e8 100%);
+        }
+        
+        .budget-card.basic {
+            border-color: #ffc107;
+            background: linear-gradient(135deg, #fffef8 0%, #fef9e7 100%);
+        }
+        
+        .budget-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .budget-amount {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .premium .budget-amount {
+            color: #28a745;
+        }
+        
+        .basic .budget-amount {
+            color: #e67e22;
+        }
+        
+        .timeline {
+            font-size: 16px;
+            color: #6c757d;
+            margin-bottom: 15px;
+        }
+        
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .features-list li {
+            padding: 5px 0;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .features-list li:before {
+            content: "✓";
+            color: #28a745;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .features-list li.excluded:before {
+            content: "✗";
+            color: #dc3545;
+        }
+        
+        .features-list li.excluded {
+            color: #6c757d;
+            text-decoration: line-through;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .tech-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 3px solid #667eea;
+        }
+        
+        .tech-item h4 {
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+            border-radius: 8px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .project-overview {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .operational-costs {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+        
+        @media print {
+            .budget-cards {
+                flex-direction: column;
+            }
+            
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Fit & Fab by Swati Sodhi</h1>
+        <h2>Mobile App Development Proposal</h2>
+        <div class="company-info">
+            <strong>AtKind.com</strong> | Pune, Maharashtra<br>
+            Professional Mobile & Web Development Solutions
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Project Overview</div>
+        <div class="project-overview">
+            <p><strong>Fit & Fab by Swati Sodhi</strong> is a comprehensive fitness and wellness mobile application that provides personalized fitness plans, diet recommendations, workout tracking, BMI calculations, and subscription-based premium content.</p>
+            
+            <p style="margin-top: 10px;"><strong>Key Components:</strong></p>
+            <ul style="margin-left: 20px; margin-top: 5px;">
+                <li>Flutter Mobile Application (Consumer App)</li>
+                <li>Laravel Backend API (Data Management)</li>
+                <li>Web Admin Panel (Content Management)</li>
+                <li>Payment Gateway Integration (Razorpay/CCAvenue)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Budget Options & Comparison</div>
+        
+        <div class="budget-cards">
+            <div class="budget-card basic">
+                <div class="budget-title">Basic Package</div>
+                <div class="budget-amount">₹2,00,000</div>
+                <div class="timeline">⏱️ Timeline: 3-4 Months</div>
+                
+                <h4 style="margin: 15px 0 10px 0;">What's Included:</h4>
+                <ul class="features-list">
+                    <li>Basic Flutter mobile app</li>
+                    <li>Essential Laravel backend APIs</li>
+                    <li>Simple admin panel</li>
+                    <li>Single payment gateway (Razorpay)</li>
+                    <li>User authentication & basic profiles</li>
+                    <li>Basic workout/diet plans</li>
+                    <li>BMI calculator</li>
+                </ul>
+                
+                <h4 style="margin: 15px 0 10px 0; color: #dc3545;">Limitations:</h4>
+                <ul class="features-list">
+                    <li class="excluded">Complex UI animations</li>
+                    <li class="excluded">Recipe management system</li>
+                    <li class="excluded">Blog/content management</li>
+                    <li class="excluded">Push notifications</li>
+                    <li class="excluded">Advanced progress tracking</li>
+                    <li class="excluded">Transformation galleries</li>
+                </ul>
+            </div>
+            
+            <div class="budget-card premium">
+                <div class="budget-title">Premium Package</div>
+                <div class="budget-amount">₹5,00,000</div>
+                <div class="timeline">⏱️ Timeline: 2-3 Months</div>
+                
+                <h4 style="margin: 15px 0 10px 0;">Complete Features:</h4>
+                <ul class="features-list">
+                    <li>Full-featured Flutter app with polished UI</li>
+                    <li>Complete Laravel backend system</li>
+                    <li>Professional admin panel</li>
+                    <li>Multiple payment gateways</li>
+                    <li>Recipe management system</li>
+                    <li>Blog & content management</li>
+                    <li>User progress tracking</li>
+                    <li>Transformation stories</li>
+                    <li>Push notifications</li>
+                    <li>Advanced analytics</li>
+                    <li>Professional testing</li>
+                    <li>Documentation & training</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Technology Stack</div>
+        
+        <div class="tech-grid">
+            <div class="tech-item">
+                <h4>Mobile Development</h4>
+                <p>Flutter 3.0+ with Dart<br>
+                GetX State Management<br>
+                Firebase Integration<br>
+                Material Design UI</p>
+            </div>
+            
+            <div class="tech-item">
+                <h4>Backend Development</h4>
+                <p>Laravel 8+ (PHP)<br>
+                MySQL Database<br>
+                RESTful APIs<br>
+                Laravel Sanctum Auth</p>
+            </div>
+            
+            <div class="tech-item">
+                <h4>Payment Integration</h4>
+                <p>Razorpay (Primary)<br>
+                CCAvenue (Secondary)<br>
+                Secure Payment Processing<br>
+                Subscription Management</p>
+            </div>
+            
+            <div class="tech-item">
+                <h4>Hosting & Deployment</h4>
+                <p>AWS EC2 Cloud Hosting<br>
+                SSL Certificate<br>
+                Domain Configuration<br>
+                Database Backup</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Operational Costs</div>
+        <div class="operational-costs">
+            <h4>Monthly Recurring Costs: ₹15,000 - ₹25,000</h4>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li><strong>AWS EC2 Hosting:</strong> ₹5,000 - ₹8,000</li>
+                <li><strong>Database & Storage:</strong> ₹3,000 - ₹5,000</li>
+                <li><strong>Payment Gateway Charges:</strong> ₹5,000 - ₹8,000 (2-3% of transactions)</li>
+                <li><strong>SSL, Domain & Email Services:</strong> ₹2,000 - ₹4,000</li>
+            </ul>
+            <p style="margin-top: 10px; font-size: 14px; color: #6c757d;">
+                <strong>Note:</strong> Payment gateway charges vary based on transaction volume
+            </p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Project Timeline</div>
+        
+        <div style="display: flex; gap: 20px;">
+            <div style="flex: 1; background: #f8f9fa; padding: 15px; border-radius: 6px;">
+                <h4>Basic Package (3-4 Months)</h4>
+                <ul style="margin-left: 15px; margin-top: 8px; font-size: 14px;">
+                    <li>Week 1-4: Backend API development</li>
+                    <li>Week 5-9: Flutter app development</li>
+                    <li>Week 10-12: Basic admin panel</li>
+                    <li>Week 13-16: Testing & deployment</li>
+                </ul>
+            </div>
+            
+            <div style="flex: 1; background: #f8f9fa; padding: 15px; border-radius: 6px;">
+                <h4>Premium Package (2-3 Months)</h4>
+                <ul style="margin-left: 15px; margin-top: 8px; font-size: 14px;">
+                    <li>Week 1-3: Complete backend system</li>
+                    <li>Week 4-7: Full-featured mobile app</li>
+                    <li>Week 8-9: Professional admin panel</li>
+                    <li>Week 10-12: Integration, testing & launch</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Why Choose AtKind.com?</div>
+        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px;">
+            <ul style="list-style: none; padding: 0;">
+                <li style="padding: 8px 0; display: flex; align-items: center;">
+                    <span style="color: #28a745; font-weight: bold; margin-right: 10px;">✓</span>
+                    <strong>Pune-based company with local expertise</strong>
+                </li>
+                <li style="padding: 8px 0; display: flex; align-items: center;">
+                    <span style="color: #28a745; font-weight: bold; margin-right: 10px;">✓</span>
+                    Specialized in Flutter & Laravel development
+                </li>
+                <li style="padding: 8px 0; display: flex; align-items: center;">
+                    <span style="color: #28a745; font-weight: bold; margin-right: 10px;">✓</span>
+                    Experience with Indian payment gateways
+                </li>
+                <li style="padding: 8px 0; display: flex; align-items: center;">
+                    <span style="color: #28a745; font-weight: bold; margin-right: 10px;">✓</span>
+                    Post-launch support and maintenance
+                </li>
+                <li style="padding: 8px 0; display: flex; align-items: center;">
+                    <span style="color: #28a745; font-weight: bold; margin-right: 10px;">✓</span>
+                    Complete documentation and training
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h3>AtKind.com - Your Technology Partner</h3>
+        <div class="contact-info">
+            <div>📧 founder@atkind.com</div>
+            <div>📱 +91 9021027889</div>
+            <div>📍 Pune, Maharashtra, India</div>
+            <div>🌐 www.atkind.com</div>
+        </div>
+        <p style="margin-top: 15px; font-size: 14px; opacity: 0.9;">
+            Professional Mobile & Web Development Solutions | Flutter | Laravel | React | Node.js
+        </p>
+    </div>
+
+    <script>
+        // Add print functionality
+        function printPDF() {
+            window.print();
+        }
+        
+        // Add download functionality for browsers that support it
+        document.addEventListener('DOMContentLoaded', function() {
+            const downloadBtn = document.createElement('button');
+            downloadBtn.innerHTML = '📄 Download PDF';
+            downloadBtn.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #667eea;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                z-index: 1000;
+                font-size: 14px;
+            `;
+            downloadBtn.onclick = printPDF;
+            document.body.appendChild(downloadBtn);
+        });
+    </script>
+</body>
+</html>
